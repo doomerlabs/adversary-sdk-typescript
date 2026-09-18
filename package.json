@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adversarylabs/adversary-sdk-typescript.git"
+    "url": "git+https://github.com/doomerlabs/adversary-sdk-typescript.git"
   },
-  "homepage": "https://github.com/adversarylabs/adversary-sdk-typescript#readme",
+  "homepage": "https://github.com/doomerlabs/adversary-sdk-typescript#readme",
   "bugs": {
-    "url": "https://github.com/adversarylabs/adversary-sdk-typescript/issues"
+    "url": "https://github.com/doomerlabs/adversary-sdk-typescript/issues"
   },
   "publishConfig": {
     "access": "public"
