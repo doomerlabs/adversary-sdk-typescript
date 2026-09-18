@@ -715,7 +715,7 @@ Rules for each `uses` item:
 
 The SDK **models and validates** `uses` (schema + `AdversaryManifest.uses`). The
 CLI **expands** composition at run time. See the CLI doc
-[`docs/composition.md`](https://github.com/adversarylabs/adversary/blob/main/docs/composition.md)
+[`docs/composition.md`](https://github.com/doomerlabs/adversary/blob/main/docs/composition.md)
 when that lands on main.
 
 ### Comment voice (`agent/voice.md`)
@@ -745,7 +745,7 @@ title/summary/evidence produced by rules (or composed specialists).
 
 With composition, put persona voice on the **entry** package you run; members
 detect, the entry package sounds. Full CLI guide:
-[`docs/voice.md`](https://github.com/adversarylabs/adversary/blob/main/docs/voice.md).
+[`docs/voice.md`](https://github.com/doomerlabs/adversary/blob/main/docs/voice.md).
 
 ### Train (home-built packages)
 
@@ -768,7 +768,7 @@ adversary train results apply <id>
   `agent/voice.md` (style only)—never hard-code quotes in `src/`.
 - Keep `agent/scope.md` / `docs/scope.md` accurate so train knows what is a fair miss.
 
-Guide: [`docs/train.md`](https://github.com/adversarylabs/adversary/blob/main/docs/train.md).
+Guide: [`docs/train.md`](https://github.com/doomerlabs/adversary/blob/main/docs/train.md).
 
 ### Automatic detection
 
