@@ -16,7 +16,7 @@ Requires Node 22 or newer and ESM.
 
 ## Migrating from 0.1.4
 
-SDK 0.1.4 output is incompatible with the current strict Adversary CLI schema. Version 0.1.5 is
+SDK 0.1.4 output is incompatible with the current strict Doomer CLI schema. Version 0.1.5 is
 the canonical protocol release. Existing adversaries should:
 
 1. Upgrade the package to `@adversarylabs/sdk@^0.1.5`.
@@ -116,7 +116,7 @@ Rule context exposes:
 
 Model-backed adversaries provide their review prompt, bounded structured input, response schema,
 and output budget. The SDK sends that request to the execution-scoped broker created by the
-Adversary CLI and validates the structured answer before returning it:
+Doomer CLI and validates the structured answer before returning it:
 
 ```ts
 const review = await ctx.model.review<{
@@ -704,8 +704,8 @@ uses:
 |---------|--------|
 | Detection depth | Each package in `uses` (and the root if it has rules) |
 | GitHub comment **voice** | The **CLI entry** package (`agent/voice.md` + section banks), not members |
-| Expansion | CLI (`adversary run <entry>`); transitive, deduped, depth-capped |
-| Skip expansion | `adversary run <entry> --no-compose` |
+| Expansion | CLI (`doomer run <entry>`); transitive, deduped, depth-capped |
+| Skip expansion | `doomer run <entry> --no-compose` |
 
 Rules for each `uses` item:
 
@@ -715,7 +715,7 @@ Rules for each `uses` item:
 
 The SDK **models and validates** `uses` (schema + `AdversaryManifest.uses`). The
 CLI **expands** composition at run time. See the CLI doc
-[`docs/composition.md`](https://github.com/doomerlabs/adversary/blob/main/docs/composition.md)
+[`docs/composition.md`](https://github.com/doomerlabs/doomer/blob/main/docs/composition.md)
 when that lands on main.
 
 ### Comment voice (`agent/voice.md`)
@@ -733,11 +733,11 @@ agent/scope.md                 # mission / train scope (separate from voice)
 
 `agent/voice.md` should include:
 
-1. **Core voice** — cadence, structure, bans, length  
+1. **Core voice** — cadence, structure, bans, length
 2. **`## Example maintainer comments (style only)`** — real human quotes under
    Ship / Design / Defects / Nits subsections (style few-shots only; never
-   hard-code those strings as finding titles in `src/`)  
-3. **Output** — return only the PR comment body  
+   hard-code those strings as finding titles in `src/`)
+3. **Output** — return only the PR comment body
 
 Rewrite rules (CLI preamble): match spirit, re-ground in current evidence, never
 copy a banked quote unchanged. Technical depth still comes from finding
@@ -745,7 +745,7 @@ title/summary/evidence produced by rules (or composed specialists).
 
 With composition, put persona voice on the **entry** package you run; members
 detect, the entry package sounds. Full CLI guide:
-[`docs/voice.md`](https://github.com/doomerlabs/adversary/blob/main/docs/voice.md).
+[`docs/voice.md`](https://github.com/doomerlabs/doomer/blob/main/docs/voice.md).
 
 ### Train (home-built packages)
 
@@ -754,11 +754,11 @@ Improve **your** local packages from your team’s PR review history with the CL
 
 ```sh
 cd my-adversary
-adversary train init --single-package
+doomer train init --single-package
 # edit adversary.train.yaml — sources (org/repos or authors_only), official jury
-adversary train run
-adversary train results ls
-adversary train results apply <id>
+doomer train run
+doomer train results ls
+doomer train results apply <id>
 ```
 
 - Only **local** packages receive drafts; optional **official** packages are a
@@ -768,7 +768,7 @@ adversary train results apply <id>
   `agent/voice.md` (style only)—never hard-code quotes in `src/`.
 - Keep `agent/scope.md` / `docs/scope.md` accurate so train knows what is a fair miss.
 
-Guide: [`docs/train.md`](https://github.com/doomerlabs/adversary/blob/main/docs/train.md).
+Guide: [`docs/train.md`](https://github.com/doomerlabs/doomer/blob/main/docs/train.md).
 
 ### Automatic detection
 
